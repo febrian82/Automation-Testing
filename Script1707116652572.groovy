@@ -1,0 +1,280 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+
+'step 1: Step Group - accessMenuSinglePayment Step Group (Reusable Group)'
+WebUI.callTestCase(findTestCase('FrontEnd/CU - Single Payment or Purchase/Step Group/Step Group - accessSinglePaymentOrPurchase'), 
+    [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.delay(5)
+
+CustomKeywords.'get.ScreenCapture.getEntirePage'('C-51-007-P-Step1.png')
+
+'verify 1 count 1: -HaderSinglePayment'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/label_SinglePayment'))
+
+'verify 1 count 2: -btn_newEntry'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_newEntry'))
+
+'verify 1 count 3: -btn_openDraft'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_openDraft'))
+
+'verify 1 count 4: -btn_help'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_help'))
+
+'verify 1 count 5: -droplist_trfFrom'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/droplist_trfFrom'))
+
+//No verification required
+'step 2: Click on droplist_Transfer_From_Domestic'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/droplist_trfFrom'), FailureHandling.STOP_ON_FAILURE)
+
+'step 4: Enter value Test Data'
+WebUI.setText(findTestObject('FrontEnd/CU - SingleBilling - GenerateBillingID_Reg/Search_transferFrom'), findTestData('FrontEnd/All Test Data/CU - Single Payment or Purchase/Test Data Single Payment').getValue(
+        'transferFrom', 3), FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 5: Click on Transfer_From_Option'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/option_trfFrom'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 5 count 1: -label_availableBalance'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/label_availableBlc'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 5 count 2: -btn_payeeList'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_payeeList'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 5 count 3: -btn_newPayee'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_newPayee'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 5 count 4: -droplist_payee'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/droplist_payee'), FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 6 : Click -droplist_payee'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/droplist_payee'), FailureHandling.STOP_ON_FAILURE)
+
+'step 7: Enter value in the Search_transferFrom field'
+WebUI.setText(findTestObject('FrontEnd/CU - Single Payment or Purchase/search_payee'), findTestData('FrontEnd/All Test Data/CU - Single Payment or Purchase/Test Data Single Payment').getValue(
+        'payee', 6), FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 8: Click on optin_payee'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/option_payee'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 8 count 1: -Textbox_accountDescPayee'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/textbox_accountDescPayee'))
+
+'step 9: Click -Textbox_accountDescPayee'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/textbox_accountDescPayee'))
+
+//No verification required
+'step 10: Enter value in the Textbox_accountDescPayee field'
+WebUI.setText(findTestObject('FrontEnd/CU - Single Payment or Purchase/textbox_accountDescPayee'), findTestData('FrontEnd/All Test Data/CU - Single Payment or Purchase/Test Data Single Payment').getValue(
+        'accDesc', 1), FailureHandling.STOP_ON_FAILURE)
+
+CustomKeywords.'get.ScreenCapture.getEntirePage'('C-51-007-P-Step10.png')
+
+'verify 10 count 1: -btn_immediate'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_immediate'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 10 count 2: -btn_ispecificDate'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_specificDate'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 10 count 3: -btn_repeat'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_repeat'), FailureHandling.STOP_ON_FAILURE)
+
+WebUI.scrollToElement(findTestObject('FrontEnd/CU - Single Payment or Purchase/datepicklist_ExpiredOn'), 0)
+
+'step 11: Click - datepicklist_expiredOn'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/datepicklist_ExpiredOn'))
+
+CustomKeywords.'webCalendarDanamon.webCalendarDanamon.customizedNextDate'('5')
+
+WebUI.scrollToElement(findTestObject('FrontEnd/CU - Single Payment or Purchase/datepicklist_ExpiredOn'), 0)
+
+'step 12: Click - checkbox_TnC'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/checkbox_TnC'))
+
+CustomKeywords.'get.ScreenCapture.getEntirePage'('C-51-007-P-Step12.png')
+
+'verify 12 count 1: -btn_saveAsDraft'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_saveAsDraft'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 12 count 2: -btn_continue'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_continue'), FailureHandling.STOP_ON_FAILURE)
+
+'step 13: Click on button_continue'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_continue'), FailureHandling.STOP_ON_FAILURE)
+
+CustomKeywords.'get.ScreenCapture.getEntirePage'('C-51-007-P-Step12.png')
+
+WebUI.delay(10)
+
+'verify 13 count 1: -droplist_choseeAmount'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/droplist_chooseAmount'))
+
+'step 14: Click on droplis_choseeAmount'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/droplist_chooseAmount'), FailureHandling.STOP_ON_FAILURE)
+
+'step 15: Enter value in the chosee_amount field'
+WebUI.setText(findTestObject('FrontEnd/CU - Single Payment or Purchase/search_amount'), findTestData('FrontEnd/All Test Data/CU - Single Payment or Purchase/Test Data Single Payment').getValue(
+        'amount', 1), FailureHandling.STOP_ON_FAILURE)
+
+'step 16: Click on option_choseeAmount'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/option_amount'), FailureHandling.STOP_ON_FAILURE)
+
+WebUI.scrollToElement(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_confirm'), 0)
+
+'verify 16 count 1: -btn_back'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_back'))
+
+'verify 16 count 2: -btn_confirm'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_confirm'))
+
+CustomKeywords.'get.ScreenCapture.getEntirePage'('C-51-007-P-Step16.png')
+
+'step 17: Click -btn_confirm'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_confirm'))
+
+WebUI.delay(5)
+
+WebUI.scrollToElement(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_back'), 0)
+
+'verify 17 count 1: -btn_back'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_back'))
+
+'step 18: Click on button_SubmitConfirmation'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_submit'), FailureHandling.OPTIONAL)
+
+'step 19: Click on button_SubmitConfirmation popup'
+WebUI.click(findTestObject('FrontEnd/CU - Balance Transfer - Corp Single/button_popUpSubmit'), FailureHandling.OPTIONAL)
+
+'step 20: Use custom keyword textProcessor.processText.removeText with input Reference No , object: label_ReferenceNo then assign into variable: refNo'
+def refNo = CustomKeywords.'textProcessor.processText.removeText'('Reference No ', findTestObject('FrontEnd/CU-Single Transfer Domestic Single/label_ReferenceNo'))
+
+WebUI.delay(5)
+
+WebUI.scrollToElement(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_done'), 0)
+
+'verify 20 count 1: -button_Done'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_done'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 20 count 2: -button_Donload_result'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_downloadResult'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 20 count 3: -button_workflowlist'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_workflow'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 20 count 2: -button_print'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_printResult'), FailureHandling.STOP_ON_FAILURE)
+
+CustomKeywords.'get.ScreenCapture.getEntirePage'('C-51-007-P-Step20.png')
+
+'step 21: Click -button_Done'
+WebUI.click(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_done'), FailureHandling.STOP_ON_FAILURE)
+
+'verify 21 count 1: -HaderSinglePayment'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/label_SinglePayment'))
+
+'verify 21 count 2: -btn_newEntry'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_newEntry'))
+
+'verify 21 count 3: -btn_openDraft'
+WebUI.verifyElementVisible(findTestObject('FrontEnd/CU - Single Payment or Purchase/btn_openDraft'))
+
+CustomKeywords.'get.ScreenCapture.getEntirePage'('C-51-007-P-Step21.png')
+
+'step 22: Logout Step Group (Reusable Group)'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+
+'step 23: LoginFO Step Group (Reusable Group) with test data: Test Data UserGlobal, corporateID: corp row: 7, username: user row: 7, password: pass row: 7'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/LoginFO'), [('corporateID') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('corp', 7), ('username') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('user', 8), ('password') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('pass', 7)], FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 24: accessPendingTaskCorporateListing Step Group (Reusable Group) with test data: Test Data UserGlobal, corp: corp row: 7, user: user row: 7, pass: pass row: 7, with parameter refNo: refNo'
+WebUI.callTestCase(findTestCase('FrontEnd/Step Group (Reusable Group)/accessPendingTaskCorporateListingRefNo'), [('refNo') : refNo], 
+    FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 25: Logout Step Group (Reusable Group)'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+
+'step 26: LoginFO Step Group (Reusable Group) with test data: Test Data UserGlobal, corporateID: corp row: 7, username: user row: 7, password: pass row: 7'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/LoginFO'), [('corporateID') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('corp', 7), ('username') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('user', 8), ('password') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('pass', 7)], FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 27: accessPendingTaskCorporateListing Step Group (Reusable Group) with test data: Test Data UserGlobal, corp: corp row: 7, user: user row: 7, pass: pass row: 7, with parameter refNo: refNo'
+WebUI.callTestCase(findTestCase('FrontEnd/Step Group (Reusable Group)/accessPendingTaskCorporateListingRefNo'), [('refNo') : refNo], 
+    FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 28: Logout Step Group (Reusable Group)'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 29: LoginFO Step Group (Reusable Group) with test data: Test Data UserGlobal, corporateID: corp row: 5, username: user row: 5, password: pass row: 5'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/LoginFO'), [('corporateID') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('corp', 5), ('username') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('user', 6), ('password') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('pass', 5)], FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 30: accessTransactionStatusCorpByRefNo Step Group (Reusable Group) with parameter refNo: refNo'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/accessTransactionStatusCorpByRefNo'), [
+        ('refNo') : refNo], FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 31: Logout Step Group (Reusable Group)'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+
+'step 32: LoginFO Step Group (Reusable Group) with test data: Test Data UserGlobal, corporateID: corp row: 5, username: user row: 5, password: pass row: 5'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/LoginFO'), [('corporateID') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('corp', 5), ('username') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('user', 6), ('password') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('pass', 5)], FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 33: accessCorporateFinancial Step Group (Reusable Group) with test data: Test Data MenuGlobal, menuName: Menu row: 4'
+WebUI.callTestCase(findTestCase('FrontEnd/Step Group (Reusable Group)/accessCorporateFinancial'), [('activityBy') : 'silk05'
+        , ('activityType') : 'Release', ('menuName') : 'Single Payment / Purchase', ('product') : 'Purchase'], FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 34: Logout Step Group (Reusable Group)'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+
+'step 35: LoginFO Step Group (Reusable Group) with test data: Test Data UserGlobal, corporateID: corp row: 5, username: user row: 5, password: pass row: 5'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/LoginFO'), [('corporateID') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('corp', 5), ('username') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('user', 6), ('password') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data UserGlobal').getValue('pass', 5)], FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 36: accessTransactionInquery Step Group (Reusable Group) with test data: Test Data MenuGlobal, menuName: Menu row: 4'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/accessTransactionInquery'), [('menuName') : findTestData(
+            'Data Files/FrontEnd/Test Data Global/Test Data MenuGlobal').getValue('Menu', 4)], FailureHandling.STOP_ON_FAILURE)
+
+//No verification required
+'step 37: Logout Step Group (Reusable Group)'
+WebUI.callTestCase(findTestCase('Test Cases/FrontEnd/Step Group (Reusable Group)/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+
